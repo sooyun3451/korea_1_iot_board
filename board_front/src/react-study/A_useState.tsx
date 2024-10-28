@@ -86,8 +86,8 @@ export default function A_useState() {
   return (
     <div>
       <p>Count: {count}</p>
-      <button onClick={handleIncrementButton}>증가 버튼</button>
-      <hr />
+      <button onClick={handleIncrementButton} style={{marginBottom : "20px"}}>증가 버튼</button>
+      
       <form>
         <div>
           <label htmlFor="email">이메일</label>

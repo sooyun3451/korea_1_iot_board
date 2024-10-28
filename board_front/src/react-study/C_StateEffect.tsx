@@ -69,11 +69,8 @@ export default function C_StateEffect() {
           `${DOMAIN}/${MENU_API}/search/category`,
           { params: { category } }
         );
-        
         const data = response.data.data;
-
         setResults(data);
-
       } catch (error) {
         console.error("Error fetching data: ", error);
       }
@@ -100,10 +97,6 @@ export default function C_StateEffect() {
       <button value="Drink" onClick={handleButtonClick}>Drink</button>
       <button value="Dessert" onClick={handleButtonClick}>Dessert</button>
       </div>
-      <ul>
-
-      </ul>
-      <hr />
       <input
         type="text"
         value={category}
