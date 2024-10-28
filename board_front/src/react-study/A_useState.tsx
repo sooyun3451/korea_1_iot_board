@@ -65,7 +65,7 @@ export default function A_useState() {
     // - 이전의 상태값과 연관이 있는 경우
     // : prev상태변수명
     // : 최신의 상태변수값을 가져옴
-    setCount((prevCount) => prevCount + 1);
+    setCount(prevCount => prevCount + 1);
   };
 
   // 여러 input 창을 관리하는 이벤트 핸들러
@@ -75,6 +75,7 @@ export default function A_useState() {
     setLoginState((prevState) => ({
       // 이메일 input창만 이벤트 발생 시 이전의 이메일, 패스워드를 모두 가져와
       ...prevState, 
+
       // 현재 변화가 일어나고 있는 name(email)에 value(입력값)를 넣어 업데이트
 
       // password는 이전의 값을 그대로 가지고 있음 
