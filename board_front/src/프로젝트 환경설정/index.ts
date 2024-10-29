@@ -11,6 +11,9 @@ export const tmp = "";
 
   - npm i 뒤에 각 라이브러리명 사용 
 
+  +) 라이브러리 삭제 
+  - npm uninstall 라이브러리명
+
   +) npm i --save @types/react-cookie 
 
   2. 공통 상수, 공통합수, 공통 타입 명시
