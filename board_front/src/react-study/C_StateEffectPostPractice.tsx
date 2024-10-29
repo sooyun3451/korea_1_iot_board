@@ -9,11 +9,11 @@ interface PostMenuRequestDto {
   description: String;
   price: number;
   isAvailable: boolean;
-  category: string;
+  category: Category;
   size: string;
 }
 
-type Category = "Food" | "Drink" | "Dessert";
+type Category = "Food" | "Drink" | "Dessert" | null;
 
 export default function C_StateEffectPostPractice() {
   const [menu, setMenu] = useState<PostMenuRequestDto>({
@@ -21,7 +21,7 @@ export default function C_StateEffectPostPractice() {
     description: "",
     price: 0,
     isAvailable: true,
-    category: "Food",
+    category: null,
     size: "",
   });
 
@@ -74,13 +74,6 @@ export default function C_StateEffectPostPractice() {
         name="price"
         step={1000}
         placeholder="price"
-        onChange={handleCategory}
-      />
-      <input
-        type="checkbox"
-        name="isAvaliable"
-        placeholder="isAvailable"
-        checked={isAvailable}
         onChange={handleCategory}
       />
       <input
