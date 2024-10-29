@@ -21,10 +21,10 @@ export default function C_StateEffectPostPractice() {
     description: "",
     price: 0,
     isAvailable: true,
-    category: "",
+    category: "Food",
     size: "",
   });
-  
+
   const [result, setResults] = useState<PostMenuRequestDto>();
   const { name, description, price, isAvailable, category, size } = menu;
 
@@ -53,9 +53,7 @@ export default function C_StateEffectPostPractice() {
     }
   };
 
-  useEffect(() => {
-
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div>
@@ -74,6 +72,7 @@ export default function C_StateEffectPostPractice() {
       <input
         type="number"
         name="price"
+        step={1000}
         placeholder="price"
         onChange={handleCategory}
       />

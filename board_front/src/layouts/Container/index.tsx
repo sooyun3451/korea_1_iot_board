@@ -10,19 +10,15 @@ import Footer from '../Footer';
 */
 
 export default function Container() {
-
   // useLocation(): 리액트 라우터 라이브러리에서 제공하는 훅 (Hook)
   // - 현재 페이지의 정보를 가져옴(현재 경로, 쿼리 파라미터 등) 
   // location.pathname: 현재 경로
   const { pathname } = useLocation(); 
-
   return (
     <>
       {/* <Header /> */}
-
       {/* 자식 컴포넌트가 해당 위치에서 렌더링 */}
       <Outlet />
-
       {/*
       현재 경로(path)가 AUTH_PATH(로그인/회원가입)이 "아니면" Footer 표시 
       : 논리 연산자 (&&, ||, !)
@@ -41,7 +37,6 @@ export default function Container() {
           >> && 논리 연산자 뒤의 값을 "해석하지 않음"
       */}
       { pathname !== AUTH_PATH && <Footer /> }
-      
       {/* 
       { pathname === AUTH_PATH || <Footer /> } 
       !==, && (좀 더 많이 사용)

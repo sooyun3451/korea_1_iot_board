@@ -11,6 +11,8 @@ export const tmp = "";
 
   - npm i 뒤에 각 라이브러리명 사용 
 
+  +) npm i --save @types/react-cookie 
+
   2. 공통 상수, 공통합수, 공통 타입 명시
   : 화면 URL 
   : 네비게이션 구조 작성
