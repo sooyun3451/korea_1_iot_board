@@ -13,7 +13,7 @@ interface PostMenuRequestDto {
   size: string;
 }
 
-type Category = "Food" | "Drink" | "Dessert" | null;
+type Category = "Food" | "Drink" | "Dessert";
 
 export default function C_StateEffectPostPractice() {
   const [menu, setMenu] = useState<PostMenuRequestDto>({
@@ -21,7 +21,7 @@ export default function C_StateEffectPostPractice() {
     description: "",
     price: 0,
     isAvailable: true,
-    category: null,
+    category: 'Food',
     size: "",
   });
 
@@ -76,12 +76,11 @@ export default function C_StateEffectPostPractice() {
         placeholder="price"
         onChange={handleCategory}
       />
-      <input
-        type="text"
-        name="category"
-        placeholder="category"
-        onChange={handleCategory}
-      />
+      <select>
+        <option value='Food'>Food</option>
+        <option>Drink</option>
+        <option>Dessert</option>
+      </select>
       <input
         type="text"
         name="size"

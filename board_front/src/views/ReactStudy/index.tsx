@@ -6,6 +6,10 @@ import StateEffect from '../../react-study/C_StateEffect';
 import StatePractice from '../../react-study/C_StateEffectPractice';
 import PostPractice from '../../react-study/C_StateEffectPostPractice';
 import ReactCookie from '../../react-study/D_react_cookie';
+import Zustand from '../../react-study/E_zustand';
+import ZustandRender from '../../react-study/E_zustand_render'
+
+import BookPractice from '../../react-study/Z_bookPractice';
 
 export default function ReactStudy() {
   return (
@@ -32,6 +36,14 @@ export default function ReactStudy() {
 
       <h2>react-cookie: 쿠키 상태 관리</h2>
       <ReactCookie />
+      <hr style={{marginTop: "20px"}} />
+
+      <h2>zustand: 전역 상태 관리</h2>
+      <Zustand />
+      <ZustandRender />
+
+      <h2>10/30 BookList</h2>
+      <BookPractice />
       <hr style={{marginTop: "20px"}} />
     </>
   )
