@@ -1,8 +1,5 @@
 // cart.store.ts
-
 import { create } from "zustand";
-
-
 
 //* interface *//
 //# 장바구니 아이템의 interface 정의 //

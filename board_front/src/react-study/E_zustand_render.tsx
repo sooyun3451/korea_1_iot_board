@@ -87,7 +87,7 @@ export default function E_zustand_render() {
             name="name"
             value={newItem.name}
             onChange={handleCartInputChange}
-          />{" "}
+          />
           <br />
           <input
             type="number"
@@ -95,7 +95,7 @@ export default function E_zustand_render() {
             name="price"
             value={newItem.price}
             onChange={handleCartInputChange}
-          />{" "}
+          />
           <br />
           <input
             type="number"
@@ -103,7 +103,7 @@ export default function E_zustand_render() {
             name="quantity"
             value={newItem.quantity}
             onChange={handleCartInputChange}
-          />{" "}
+          />
           <br />
           <button
             onClick={handleAddItem}

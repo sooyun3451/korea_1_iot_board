@@ -1,6 +1,5 @@
 // count.store.ts
 // : 카운트값 전역 상태 관리
-
 import { create } from "zustand";
 
 //* interface: 스토어(전역 저장소)의 interface 정의 *//

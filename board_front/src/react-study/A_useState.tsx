@@ -33,7 +33,6 @@ import React, { useState } from "react";
 // const a = 0;
 // const name = '홍길서';
 
-
 interface LoginState {
   email: string;
   password: string;

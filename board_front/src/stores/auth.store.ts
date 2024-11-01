@@ -1,7 +1,6 @@
 // zustand 파일명 권장 
 // : 전역상태관리할데이터명.store.ts
 // EX) user.store.ts
-
 import { create } from "zustand";
 
 //* interface *//
