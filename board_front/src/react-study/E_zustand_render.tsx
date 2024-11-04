@@ -19,7 +19,6 @@ export default function E_zustand_render() {
   const { addItem, clearCart } = useCartStore();
 
   //* Event Handle *//
-
   //# event handler: 새로운 장바구니 아이템 입력 변화에 대한 이벤트 핸들러 //
   // - 하나의 핸들러로 관리
   const handleCartInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
