@@ -8,7 +8,7 @@ import useThemeStore from '../../stores/theme.store';
 export default function Header() {
   //* state *//
   //# 사용자의 인증 상태를 전역 상태 관리 //
-  const { isAuthenticated, user, logout } = useAuthStore();
+  const { isAuthenticated, logout } = useAuthStore();
 
   //# 전체 테마의 상태를 전역 상태 관리 //
   const { theme, toggleTheme } = useThemeStore();

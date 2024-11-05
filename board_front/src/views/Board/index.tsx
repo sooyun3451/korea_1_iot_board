@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Pagination from '../../components/Pagination'
 import axios from 'axios';
+import { useCookies } from 'react-cookie';
 
 interface Post {
   id: number;
@@ -13,12 +14,24 @@ export default function Board() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(1);
-
+  const [cookies, , removeCookeis] = useCookies(['token']);
+  
   const fetchPosts = async (page: number) => {
-    const response = await axios.get(`http://localhost:8080/api/v1/posts?page=${page}&size=5`);
-    const data = response.data.data;
-    setPosts(data.content);
-    setTotalPages(data.totalPages);
+    const token = cookies.token;
+    try {
+      const response = await axios.get(`http://localhost:8080/api/v1/posts?page=${page}&size=5`, {
+        headers: {
+          Authorization: `Bearer ${token}` 
+        }
+      });
+
+      const data = response.data.data;
+      setPosts(data.content);
+      setTotalPages(data.totalPages);
+    }catch(e) {
+      console.error('Failed to fetch posts data', e);
+      removeCookeis('token');
+    }
   }
 
   useEffect(() => {
