@@ -52,7 +52,7 @@ function App() {
           return userData;
         }
       } catch (e) {
-        console.error("Failed to ffetch user data", e);
+        console.error("Failed to fetch user data", e);
         removeCookie("token", { path: "/" });
       }
     }
