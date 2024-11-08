@@ -13,6 +13,7 @@ repositories {
 }
 
 dependencies {
+    // 프로젝트 개발에 필요한 기능인 의존성을 입력
     // : 스프링부트 웹 관련 기능 제공 | 테스트 기능을 제공
     implementation('org.springframework.boot:spring-boot-starter-web')
     // 스프링 데이터 JPA
@@ -22,6 +23,7 @@ dependencies {
 
     // 프로젝트 유효성 검사를 위한 의존성 입력
     implementation('jakarta.validation:jakarta.validation-api:3.0.2')
+    implementation('commons-validator:commons-validator:1.7')
 
     // JWT 의존성 추가
     implementation('io.jsonwebtoken:jjwt-api:0.11.2')
@@ -35,7 +37,6 @@ dependencies {
     // 반복 메서드 작성 작업을 줄여주는 라이브러리
     compileOnly('org.projectlombok:lombok')
     annotationProcessor('org.projectlombok:lombok')
-
 
     testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
     testImplementation('org.assertj:assertj-core:3.22.0')
