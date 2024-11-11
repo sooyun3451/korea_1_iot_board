@@ -125,13 +125,27 @@ public class ArticleServiceImpl implements ArticleService {
         Long articleId = id;
 
         try {
-            Optional<Article> optionalArticle = articleRepository.findByIdAndAuthorId(authorId, articleId);
+            // Optional<Article> optionalArticle = articleRepository.findByIdAndAuthorId(authorId, articleId);
+
+            // if(optionalArticle.isEmpty()) {
+            //    return ResponseDto.setFailed(ResponseMessage.NO_PERMISSION);
+            // }
+
+            // Article article = optionalArticle.get();
+            // data = new ArticleResponseDto(article);
+
+            Optional<Article> optionalArticle = articleRepository.findById(articleId);
 
             if(optionalArticle.isEmpty()) {
-                return ResponseDto.setFailed(ResponseMessage.NO_PERMISSION);
+                return ResponseDto.setFailed(ResponseMessage.NOT_EXIST_POST);
             }
 
             Article article = optionalArticle.get();
+
+            if(!article.getAuthorId().equals(authorId)) {
+                return ResponseDto.setFailed(ResponseMessage.NO_PERMISSION);
+            }
+
             data = new ArticleResponseDto(article);
 
         } catch(Exception e) {

@@ -6,6 +6,7 @@ import com.koreait.board_back.dto.article.request.ArticleCreateRequestDto;
 import com.koreait.board_back.dto.article.request.ArticleUpdateRequestDto;
 import com.koreait.board_back.dto.article.response.ArticleResponseDto;
 import com.koreait.board_back.service.ArticleService;
+import jakarta.annotation.security.PermitAll;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -53,6 +54,8 @@ public class ArticleController {
 
     // 일반 조회
     @GetMapping(ARTICLE_GET_BY_ID)
+    @PermitAll
+    // @PermitAll: 인증 여부와 관계없이 모든 사용자에게 접근을 허용 
     public ResponseEntity<ResponseDto<ArticleResponseDto>> getArticle(@PathVariable Long id) {
         ResponseDto<ArticleResponseDto> response = articleService.getArticle(id);
         HttpStatus status = response.isResult() ? HttpStatus.NO_CONTENT : HttpStatus.NOT_FOUND;
