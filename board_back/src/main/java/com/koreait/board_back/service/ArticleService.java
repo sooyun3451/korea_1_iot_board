@@ -13,4 +13,6 @@ public interface ArticleService {
     ResponseDto<Void> deleteArticle(Long authorId, Long id);
 
     ResponseDto<ArticleResponseDto> getArticle(Long id);
+
+    ResponseDto<ArticleResponseDto> getEditableArticle(Long authorId, Long id);
 }
