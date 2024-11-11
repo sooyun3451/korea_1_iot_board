@@ -17,25 +17,25 @@ import java.util.List;
 @AllArgsConstructor
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // PK
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_inclement
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true) // null X, uniqueKey
     private String userId;
 
-    @Column(nullable = false)
+    @Column(nullable = false) // null X
     private String password;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true) // null X, uniqueKey
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = false) // null X
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = false) // null X
     private String phone;
 
-    @Column(columnDefinition = "ENUM('M', 'F')")
+    @Column(columnDefinition = "ENUM('M', 'F')") // DB 컬럼 정보를 직접 줄 수 있음
     private String gender;
 }

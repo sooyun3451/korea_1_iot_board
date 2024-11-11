@@ -65,6 +65,7 @@ public class AuthServiceImpl implements AuthService {
         }
 
         if (email == null || email.isEmpty() || !EmailValidator.getInstance().isValid(email)) {
+            // EmailValidator 사용: implementation('commons-validator:commons-validator:1.7') 추가(build.gradle)
             // INVALID_EMAIL
             return ResponseDto.setFailed(ResponseMessage.VALIDATION_FAIL);
         }

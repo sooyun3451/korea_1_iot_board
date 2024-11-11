@@ -46,10 +46,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         } catch(Exception e) {
             e.printStackTrace();
         }
+
         filterChain.doFilter(request, response);
     }
 
     private void setAuthenticationContext(HttpServletRequest request, String userId) {
+
         AbstractAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userId, null, AuthorityUtils.NO_AUTHORITIES);
 
         authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));

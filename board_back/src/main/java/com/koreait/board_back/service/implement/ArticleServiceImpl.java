@@ -96,6 +96,7 @@ public class ArticleServiceImpl implements ArticleService {
         return ResponseDto.setSuccess(ResponseMessage.SUCCESS, null);
     }
 
+    // 일반 조회
     @Override
     public ResponseDto<ArticleResponseDto> getArticle(Long id) {
         ArticleResponseDto data = null;
@@ -119,6 +120,7 @@ public class ArticleServiceImpl implements ArticleService {
         return ResponseDto.setSuccess(ResponseMessage.SUCCESS, data);
     }
 
+    // 작성자가 수정을 위해 보는 조회페이지
     @Override
     public ResponseDto<ArticleResponseDto> getEditableArticle(Long authorId, Long id) {
         ArticleResponseDto data = null;
