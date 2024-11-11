@@ -27,7 +27,7 @@ public class Article {
     @Column(nullable = false, name = "author_id")
     private Long authorId;
 
-    @Builder.Default
+    @Builder.Default // Article 만들어질 때 댓글이 담길 공간(list)만들어 두기
     @OneToMany(mappedBy = "article", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
 }
